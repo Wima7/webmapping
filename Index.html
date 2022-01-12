@@ -1,0 +1,47 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Leaflet Project</title>
+
+	<link rel="stylesheet" href="leaflet.css" />
+	<script src="leaflet.js"></script>
+
+	
+</head>
+<body>
+
+
+<div id="mapid" style="width: 1200px; height: 800px;"></div>
+<script>
+
+	var mymap = L.map('mapid').setView([33.939006, -6.886224], 18);
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(mymap);
+
+	L.marker([33.976052, -6.866294]).addTo(mymap)
+		.bindPopup("Bonjour la topo à l'ère COVID :-) ");
+
+	L.circle([51.508, -0.11], 500, {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5
+	}).addTo(mymap).bindPopup("I am a circle.");
+
+    L.polygon([
+		[33.976844, -6.867433],
+		[33.97679036079226, -6.867511834068655],
+		[33.97650712398396, -6.867142001282165],[33.97633032601191, -6.8672964608576965],[33.97633032601191, -6.867307338292593],[33.97618780492581, -6.8671006670295505],[33.97635738694536, -6.866939680993079],[33.97620764964752, -6.866680798042538],[33.97635377882083, -6.866537215901904],[33.97646743467086, -6.866687324503477],[33.97655944167626, -6.866591603076386],[33.97674165134321, -6.866870065409721],[33.9768138134754, -6.8667917478784695],[33.976815617526704, -6.86679392336547],[33.976801185106574, -6.866959260375878],[33.97672721890861, -6.867033226933175],[33.976756083774, -6.867085438620679],[33.976757887827766, -6.867085438620679],[33.97667670537061, -6.8671637561519345],[33.976848090467065, -6.867433516537372]
+	],{
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5
+	}).addTo(mymap).bindPopup("Département Topographique.");
+</script>
+
+
+
+</body>
+</html>
